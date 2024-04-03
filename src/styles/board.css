@@ -6,8 +6,8 @@
 	margin: 3rem auto 0 auto;
 	border-collapse: collapse;
 	border: 2px solid var(--medium-blue-gray);
-	background-color: white;
-	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+	background-color: rgba(218, 249, 255, 0.596);
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(22, 15, 122, 0.671) 0px 0px 0px 1px inset;
 }
 
 .board .square {
@@ -18,11 +18,11 @@
 }
 
 .board tr:nth-child(odd) td:nth-child(even) {
-	background: linear-gradient(45deg, rgb(155, 158, 167), rgb(169, 172, 179), rgb(155, 158, 167));
+	background: linear-gradient(45deg, rgb(105, 142, 255), rgb(74, 106, 182), rgb(144, 170, 248));
 }
 
 .board tr:nth-child(even) td:nth-child(odd) {
-	background: linear-gradient(45deg, rgb(155, 158, 167), rgb(169, 172, 179), rgb(155, 158, 167));
+	background: linear-gradient(45deg, rgb(105, 142, 255), rgb(74, 106, 182), rgb(144, 170, 248));
 }
 
 .figure {

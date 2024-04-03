@@ -30,11 +30,10 @@
 	body {
 		--primary-color: black;
 		--primary-lighter-color: #777;
-		--text-color: #444;
-		--bg-color: #fff;
-		--body-bg-color: #fff;
+		--text-color: #ffffff;
+		--bg-color: #95d8ff;
+		--body-bg-color: #77bcf5;
 		--medium-sky-blue: #1a70da;
-		--invert: none;
 	}
 }
 
@@ -65,7 +64,7 @@ body.dark-mode {
 	--primary-lighter-color: rgb(126, 126, 126);
 	--text-color: #ddd;
 	--bg-color: #11111a;
-	--body-bg-color: #22222a;
+	--body-bg-color: #a6a6e2;
 	--medium-sky-blue: #559aee;
 	--invert: invert(100%);
 }
