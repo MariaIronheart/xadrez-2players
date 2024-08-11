@@ -17,6 +17,7 @@ export default class Setting extends React.Component {
         this.updateLightMode = this.updateLightMode.bind(this);
         this.updateDarkMode = this.updateDarkMode.bind(this);
         this.updateSystemMode = this.updateSystemMode.bind(this);
+        this.updateBlackWhiteMode = this.updateBlackWhiteMode.bind(this);
 
         this.updatePlainStyle = this.updatePlainStyle.bind(this);
         this.updateFancyStyle = this.updateFancyStyle.bind(this);
@@ -35,12 +36,16 @@ export default class Setting extends React.Component {
             this.updateLightMode();
         } else if (cmode === "dark") {
             this.updateDarkMode();
+        } else if (cmode === "black"){
+            this.updateBlackWhiteMode();
         } else {
             this.updateSystemMode();
         }
     }
 
     updateLightMode() {
+        if (document.body.classList.contains("black-mode"))
+            document.body.classList.remove("black-mode");
         if (document.body.classList.contains("dark-mode"))
             document.body.classList.remove("dark-mode");
         document.body.classList.add("light-mode");
@@ -50,8 +55,19 @@ export default class Setting extends React.Component {
     updateDarkMode() {
         if (document.body.classList.contains("light-mode"))
             document.body.classList.remove("light-mode");
+        if (document.body.classList.contains("black-mode"))
+            document.body.classList.remove("black-mode");
         document.body.classList.add("dark-mode");
         this.props.updateColorMode("dark");
+    }
+
+    updateBlackWhiteMode() {
+        if (document.body.classList.contains("dark-mode"))
+            document.body.classList.remove("dark-mode");
+        if (document.body.classList.contains("light-mode"))
+            document.body.classList.remove("light-mode");
+        document.body.classList.add("black-mode");
+        this.props.updateColorMode("black");
     }
 
     updateSystemMode() {
@@ -84,6 +100,8 @@ export default class Setting extends React.Component {
                     updateColorMode={this.props.updateColorMode}
                     updateLightMode={this.updateLightMode}
                     updateDarkMode={this.updateDarkMode}
+                    updateBlackWhiteMode={this.updateBlackWhiteMode}
+                    
                 />
                 <UndoBtn
                     history={this.props.history}
@@ -109,6 +127,7 @@ export default class Setting extends React.Component {
                             colorMode={this.props.colorMode}
                             updateLightMode={this.updateLightMode}
                             updateDarkMode={this.updateDarkMode}
+                            updateBlackWhiteMode={this.updateBlackWhiteMode}
                             updateSystemMode={this.updateSystemMode}
                         />
                     </section>

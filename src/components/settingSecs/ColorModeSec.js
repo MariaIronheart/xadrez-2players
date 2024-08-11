@@ -23,6 +23,7 @@ function ColorModeOpt(props) {
 export default function ColorModeSec(props) {
     let isLightDefault = props.colorMode === "light";
     let isDarkDefault = props.colorMode === "dark";
+    let isBlackWhite = props.colorMode === "black";
     let isSystemDefault = props.colorMode === "system";
 
     return (
@@ -42,6 +43,11 @@ export default function ColorModeSec(props) {
                 colorMode="system"
                 updateMode={props.updateSystemMode}
                 default={isSystemDefault}
+            />
+            <ColorModeOpt
+                colorMode="black"
+                updateMode={props.updateBlackWhiteMode}
+                default={isBlackWhite}
             />
         </div>
     )

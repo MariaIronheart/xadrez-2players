@@ -1,12 +1,15 @@
 import React, { useRef } from "react"
 import Figure from "./Figure"
+import ColorModeBtn from "./utilities/buttons/ColorMode";
+import ColorModeSec from "./settingSecs/ColorModeSec";
+
 
 function Square(props) {
     return (
         <td
-            className={`square ${props.class}`}
+            className={`square ${props.class} ${props.colorMode}`}
             style={{
-                backgroundColor: props.backgroundColor,
+                backgroundColor: props.colorMode,
                 boxShadow: props.boxShadow,
             }}
         >
@@ -35,6 +38,7 @@ export default function Board(props) {
                 <Square
                     key={i * 8 + j}
                     class={classStr}
+                    colorMode={props.colorMode}
                 >
                     <Figure
                         side={props.sideMap[[i, j]]}
